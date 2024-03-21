@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>SCROLL REVEAL</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ 
+</head>
+<body>
+      
+<nav>
+      <ul>
+            <li>
+                  <a href="#" id="anasayfaa">Anasayfa</a>
+            </li>
+            <li>
+                  <a href="#" id="hakkimizdaa">Hakkımızda</a>
+            </li>
+            <li>
+                  <a href="#" id="urunlera">Ürünler</a>
+            </li>
+            <li>
+                  <a href="#" id="iletisima">İletişim</a>
+            </li>
+
+      </ul>
+</nav>
+
+<section class="section" id="anasayfa">
+      <div>
+      <h1>ANASAYFA</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis architecto magni voluptatum quos officiis libero expedita fuga natus aliquam quasi! Esse minus facere dicta aspernatur eaque optio id sunt? Consectetur.</p>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni doloribus saepe fuga sed aut porro dolor quas officiis, eveniet odit vel consectetur, assumenda cum optio quo magnam delectus id blanditiis.</p>
+      <a class="btn" href="#">Button</a>
+</div>
+</section>
+
+<section class="section" id="hakkimizda">
+      <div>
+      <h1>HAKKIMIZDA</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis architecto magni voluptatum quos officiis libero expedita fuga natus aliquam quasi! Esse minus facere dicta aspernatur eaque optio id sunt? Consectetur.</p>
+      </div>
+</section>
+
+<section class="section" id="urunler">
+      <div>
+      <h1>ÜRÜNLER</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis architecto magni voluptatum quos officiis libero expedita fuga natus aliquam quasi! Esse minus facere dicta aspernatur eaque optio id sunt? Consectetur.</p>
+      <div id="urunlerdiv"></div>
+</section>
+
+
+<section class="section" id="iletisim">
+      <div>
+      <h1>İLETİŞİM</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis architecto magni voluptatum quos officiis libero expedita fuga natus aliquam quasi! Esse minus facere dicta aspernatur eaque optio id sunt? Consectetur.</p>
+      </div>
+</section>
+
+<script>
+
+$(document).ready(function() {
+
+    $("#anasayfaa").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#anasayfa").offset().top
+        }, 700);
+
+    });
+
+    $("#hakkimizdaa").click(function() {
+       
+        $('html, body').animate({
+            scrollTop: $("#hakkimizda").offset().top
+        }, 700);
+    });
+
+    $("#urunlera").click(function() {
+       
+       $('html, body').animate({
+           scrollTop: $("#urunler").offset().top
+       }, 700);
+   });
+
+    $("#iletisima").click(function() {
+     
+        $('html, body').animate({
+            scrollTop: $("#iletisim").offset().top
+        }, 700);
+    });
+});
+
+let urunler = [
+      {
+            urunurl : "resim1.jpg",
+            urunadi : "Ürün 1",
+            urunfiyati : "1000"
+      },
+      {
+            urunurl : "resim1.jpg",
+            urunadi : "Ürün 1",
+            urunfiyati : "1000"
+      },
+      {
+            urunurl : "resim1.jpg",
+            urunadi : "Ürün 1",
+            urunfiyati : "1000"
+      },
+      {
+            urunurl : "resim1.jpg",
+            urunadi : "Ürün 1",
+            urunfiyati : "1000"
+      },
+      {
+            urunurl : "resim1.jpg",
+            urunadi : "Ürün 1",
+            urunfiyati : "1000"
+      },
+      {
+            urunurl : "resim1.jpg",
+            urunadi : "Ürün 1",
+            urunfiyati : "1000"
+      },
+      {
+            urunurl : "resim1.jpg",
+            urunadi : "Ürün 1",
+            urunfiyati : "1000"
+      },
+      {
+            urunurl : "resim1.jpg",
+            urunadi : "Ürün 1",
+            urunfiyati : "1000"
+      }
+];
+
+urunler.forEach(urun=> {
+
+let urunlerdiv = document.getElementById("urunlerdiv");
+
+urunlerdiv.innerHTML += `
+
+<div>
+<img src="imgs/urunler/${urun.urunurl}" />
+<h1>${urun.urunadi}</h1>
+<h3>${urun.urunfiyati}</h3>
+</div>
+
+`
+
+})
+
+</script>
+
+</body>
+</html>
